@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_10.jpg">
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_11.jpg">
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_12.jpg">
-<meta property="og:updated_time" content="2018-08-11T08:56:12.344Z">
+<meta property="og:updated_time" content="2018-08-11T09:06:27.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo+GitHub搭建博客的过程">
 <meta name="twitter:description" content="前言  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;第一次使用Hexo+GitHub搭建博客，之前从未接触过，比之WordPress要麻烦很多，需要操作的软件也比较多，看了很多的教程，有的详细有的简单，但多多少少都缺点儿什么，尤其是像我这种菜鸟级别的，很多时候看的一脸懵逼，东拼西凑的看了很多版本的教程，才算是把这个博客搭建起来了，也仅仅是搭建起来，后面还有很">
@@ -366,41 +366,28 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次使用Hexo+GitHub搭建博客，之前从未接触过，比之WordPress要麻烦很多，需要操作的软件也比较多，看了很多的教程，有的详细有的简单，但多多少少都缺点儿什么，尤其是像我这种菜鸟级别的，很多时候看的一脸懵逼，东拼西凑的看了很多版本的教程，才算是把这个博客搭建起来了，也仅仅是搭建起来，后面还有很多需要学习的地方。<br>   <a id="more"></a> </p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要用到的包括Git、Node.js、GitHub账号</p>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要用到的包括Git、Node.js、GitHub账号等。</p>
 <ol>
-<li><p>去<a href="http://nodejs.cn" target="_blank" rel="noopener">Node.js官网</a>下载最新版本的Node.js。注意：需要下载与自己电脑系统相应的版本，过程默认安装就可以，无需更改任何选项。<br>安装结束后，通过Windows+R快捷键点开运行，输入cmd，点击确认。</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_1.jpg" alt="cmd"></p>
-<p>在命令行内输入【node -v】【npm -v】，如图显示相应的版本号，即安装成功。</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_2.jpg" alt="bbcx"></p>
+<li><p>去<a href="http://nodejs.cn" target="_blank" rel="noopener">Node.js官网</a>下载最新版本的Node.js。注意：需要下载与自己电脑系统相应的版本，过程默认安装就可以，无需更改任何选项。<br>安装结束后，通过Windows+R快捷键点开运行，输入cmd，点击确认。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_1.jpg" alt="cmd"></p>
+<p>在命令行内输入【node -v】【npm -v】，如图显示相应的版本号，即安装成功。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_2.jpg" alt="bbcx"></p>
 </li>
-<li><p>安装Git和配置好Git的环境。<a href="https://www.git-scm.com/download/" target="_blank" rel="noopener">下载</a>   桌面空白处 → 右击鼠标 → 如下图所示（安装成功）：</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_3.jpg" alt="bbcx">   </p>
-<p>运行 cmd 可得：</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_5.jpg" alt="bbcx"></p>
+<li><p>安装Git和配置好Git的环境。<a href="https://www.git-scm.com/download/" target="_blank" rel="noopener">下载</a>   桌面空白处 → 右击鼠标 → 如下图所示（安装成功）：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_3.jpg" alt="bbcx">   </p>
+<p>运行 cmd 可得：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_5.jpg" alt="bbcx"></p>
 </li>
-<li><p>注册GitHub，新建项目（New repository ），项目必须要遵守格式：账户名.github.io ，不得另起名字（当时因为一时脑抽，选择了一个别的名字，导致后期链接ssh的时候出现了很多莫名其妙的错误）。勾选Initialize this repository with a README 。（忽略那个红色的提醒，是因为建过同名的项目）</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_4.jpg" alt="bbcx"></p>
+<li><p>注册GitHub，新建项目（New repository ），项目必须要遵守格式：账户名.github.io ，不得另起名字（当时因为一时脑抽，选择了一个别的名字，导致后期链接ssh的时候出现了很多莫名其妙的错误）。勾选Initialize this repository with a README 。（忽略那个红色的提醒，是因为建过同名的项目）<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_4.jpg" alt="bbcx"></p>
 </li>
-<li><p>安装Hexo，找个合适的盘建立新的文件夹，用以存放Hexo的安装文件。通过命令行进入该文件夹：</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_6.jpg" alt="bbcx"></p>
+<li><p>安装Hexo，找个合适的盘建立新的文件夹，用以存放Hexo的安装文件。通过命令行进入该文件夹：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_6.jpg" alt="bbcx"></p>
 <p>运行【npm install hexo -g 】命令，安装Hexo。</p>
-<p>运行【hexo -v】，检查安装是否成功，如图所示即成功：</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_7.jpg" alt="bbcx"></p>
+<p>运行【hexo -v】，检查安装是否成功，如图所示即成功：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_7.jpg" alt="bbcx"></p>
 </li>
-<li><p>初始化该文件夹，运行中输入【hexo init 】</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_8.jpg" alt="bbcx"></p>
+<li><p>初始化该文件夹，运行中输入【hexo init 】<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_8.jpg" alt="bbcx"></p>
 </li>
-<li><p>安装需要的组件，桌面空白处，右键点击【Git Bash Here】，进入文件夹：</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_9.jpg" alt="bbcx"></p>
-<p>输入【npm install】，安装所需要组件，执行完毕后，输入【hexo g】，生成静态页。</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_10.jpg" alt="bbcx"></p>
+<li><p>安装需要的组件，桌面空白处，右键点击【Git Bash Here】，进入文件夹：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_9.jpg" alt="bbcx"></p>
+<p>输入【npm install】，安装所需要组件，执行完毕后，输入【hexo g】，生成静态页。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_10.jpg" alt="bbcx"></p>
 </li>
-<li><p>现在我们的本地hexo已经安装完毕，可以启动本地服务器，正式体验了。</p>
-<p>输入【hexo s】开启服务器。如下图所示，就已经成功了，访问：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可以了。</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_11.jpg" alt="bbcx"></p>
+<li><p>现在我们的本地hexo已经安装完毕，可以启动本地服务器，正式体验了。<br>输入【hexo s】开启服务器。如下图所示，就已经成功了，访问：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 可以了。<br>PS：每次需要本地调试查看效果的时候，都需要执行这一步。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_11.jpg" alt="bbcx"></p>
 </li>
-<li><p>看到如下样式，即安装成功。</p>
-<p><img src="http://pdaa2faxw.bkt.clouddn.com/1_12.jpg" alt="bbcx"></p>
+<li><p>看到如下样式，即安装成功。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_12.jpg" alt="bbcx"></p>
 </li>
 </ol>
 
@@ -557,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装"><span class="nav-number">2.</span> <span class="nav-text">软件安装</span></a></li></ol></div>
             
 
           </div>
