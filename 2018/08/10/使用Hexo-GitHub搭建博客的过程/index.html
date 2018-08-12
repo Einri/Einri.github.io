@@ -99,7 +99,23 @@
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_10.jpg">
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_11.jpg">
 <meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_12.jpg">
-<meta property="og:updated_time" content="2018-08-11T09:31:54.185Z">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_13.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_14.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_15.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_16.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_19.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_20.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_21.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_22.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_23.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_24.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_25.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_26.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_27.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_28.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_29.jpg">
+<meta property="og:image" content="http://pdaa2faxw.bkt.clouddn.com/1_30.jpg">
+<meta property="og:updated_time" content="2018-08-12T07:18:40.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo+GitHub搭建博客的过程">
 <meta name="twitter:description" content="前言  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;第一次使用Hexo+GitHub搭建博客，之前从未接触过，比之WordPress要麻烦很多，需要操作的软件也比较多，看了很多的教程，有的详细有的简单，但多多少少都缺点儿什么，尤其是像我这种菜鸟级别的，很多时候看的一脸懵逼，东拼西凑的看了很多版本的教程，才算是把这个博客搭建起来了，也仅仅是搭建起来，后面还有很">
@@ -390,7 +406,29 @@
 <li><p>看到如下样式，即安装成功。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_12.jpg" alt="bbcx"></p>
 </li>
 </ol>
-<h2 id="连接GitHub"><a href="#连接GitHub" class="headerlink" title="连接GitHub"></a>连接GitHub</h2>
+<h2 id="连接GitHub"><a href="#连接GitHub" class="headerlink" title="连接GitHub"></a>连接GitHub</h2><p>   本地调试已经成功，那么现在我们需要将本地的Hexo与GitHub连接起来， 实现由本地推送至GitHub。</p>
+<ol>
+<li><p>设置git的 【user name】和【email】，鼠标右键点击【Git Base Here】，进入存放Hexo的文件夹，执行【git config –global user.name “einri”】和【git config –global user.email “<a href="mailto:871150479@qq.com" target="_blank" rel="noopener">871150479@qq.com</a>“】。上面两行命令中，”einri”和”<a href="mailto:871150479@qq.com" target="_blank" rel="noopener">871150479@qq.com</a>“需要换成你自己的用户名和邮箱。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_13.jpg" alt="bbcx"></p>
+</li>
+<li><p>检查git安装后，是否存在.ssh文件夹，里面是否有文件。输入【cd ~/.ssh】进入文件夹，可以进入就说明存在该文件夹，然后输入【ls】查看里面的文件。有【id_rsa】【id_rsa.pub】【known_hosts】这三个文件夹。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_14.jpg" alt="bbcx"></p>
+<p>PS:如果没有.ssh这个文件夹，则需要你去生成。没有文件显示如下图：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_15.jpg" alt="bbcx"></p>
+<p>输入【ssh-keygen -t rsa -C “你的邮箱” 】，按回车，一直按…直到显示如下图所示即生成成功：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_16.jpg" alt="bbcx"></p>
+<p>这时，.ssh文件（默认路径：C:\Users\Administrator）就已经生成成功，输入【cd ~/.ssh】，进入文件夹，看看是不是已经成功进入了呢？<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_19.jpg" alt="ssh"></p>
+<p>但是，出现了一个新的问题，本应该是3个文件，可这里却显示了两个，少一个【known_hosts】，这时如果直接操作GitHub连接ssh还是会出错，所以我们需要生成这个文件，输入【ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> 】，这个命令本来是用于测试ssh是否连接成功的，但在这里我们用来生成【known_hosts】。回车之后，输入【yes】，此时，3个文件全部生成。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_20.jpg" alt="bbcx"><br><img src="http://pdaa2faxw.bkt.clouddn.com/1_21.jpg" alt="bbcx"></p>
+</li>
+<li><p>输入【eval “$(ssh-agent -s)”】，添加密钥到ssh-agent<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_22.jpg" alt="bbcx"></p>
+</li>
+<li><p>输入【ssh-add ~/.ssh/id_rsa】，添加生成的SSH key到ssh-agent<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_23.jpg" alt="bbcx"></p>
+</li>
+<li><p>找到C:\Users\Administrator\ .ssh 里面的【id_rsa.pub】文件，用记事本打开，复制全部内容。我们之前注册和新建项目的GitHub，此时就派上用场了。登录GitHub，选择头像下面的【settings】→【SSH and GPG keys】→【New SSH key 】，将【id_rsa.pub】文件里的内容复制上去。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_24.jpg" alt="bbcx"><br><img src="http://pdaa2faxw.bkt.clouddn.com/1_25.jpg" alt="bbcx"><br><img src="http://pdaa2faxw.bkt.clouddn.com/1_26.jpg" alt="bbcx"></p>
+</li>
+<li><p>输入【ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>】，这是第二次输入这段命令，之前是因为需要生成文件，此时，才是真的用来测试ssh是否连接成功，当在下图中看到自己的用户名，添加ssh成功。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_27.jpg" alt="bbcx"></p>
+</li>
+<li><p>配置Deployment，在本地Hexo文件夹根目录中，找到_config.yml文件，修改deploy的信息。在该文件的最后一行。<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_28.jpg" alt="bbcx"><br><img src="http://pdaa2faxw.bkt.clouddn.com/1_29.jpg" alt="bbcx"></p>
+<p>repository的值从GitHub新建的项目中获取：<br><img src="http://pdaa2faxw.bkt.clouddn.com/1_30.jpg" alt="bbcx"></p>
+</li>
+</ol>
+
       
     </div>
     
